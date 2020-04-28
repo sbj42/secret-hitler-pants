@@ -122,32 +122,33 @@ function createGame(): Interface.Game {
     };
 }
 
-function createGameSecrets(seed?: string): Interface.GameSecrets {
+function createGameSecrets(nextSeed?: string, seed?: string): Interface.GameSecrets {
     if (!seed) {
         seed = AUTO_SEED || randomSeedString();
     }
     return {
         seed,
+        nextSeed,
         policyDeck: [],
         policyDiscard: [],
-        rng: () => 0,
+        rng: seedrandom(seed),
     };
 }
 
-export function createServerState(roomId: string, seed?: string): Interface.ServerState {
+export function createServerState(roomId: string, nextSeed?: string): Interface.ServerState {
     return {
         roomId,
         users: {},
         game: createGame(),
 
-        gameSecrets: createGameSecrets(seed),
+        gameSecrets: createGameSecrets(nextSeed),
         playerSecrets: [],
     };
 }
 
-function resetServerStateForNewGame(state: Interface.ServerState, seed?: string) {
+function resetServerStateForNewGame(state: Interface.ServerState) {
     state.game = createGame();
-    state.gameSecrets = createGameSecrets(seed);
+    state.gameSecrets = createGameSecrets(undefined, state.gameSecrets.nextSeed);
     state.playerSecrets = [];
 }
 
@@ -265,7 +266,6 @@ function doGameStart(state: Interface.ServerState, playerUsers: Interface.User[]
     state.game.players.forEach((player) => Interface.getUser(state, player.userId).playerNum = player.playerNum);
     
     log(`[room ${state.roomId}]   seed: ${state.gameSecrets.seed}`);
-    state.gameSecrets.rng = seedrandom(state.gameSecrets.seed);
 
     const { fascists, liberals } = makeTeams(state.game.players, state.gameSecrets.rng);
     log(`[room ${state.roomId}]   hitler: ${fascists[0].playerNum}`);

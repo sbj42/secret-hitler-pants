@@ -77,6 +77,7 @@ export interface Game {
 
 export interface GameSecrets {
     seed: string;
+    nextSeed?: string;
     policyDeck: Cards;
     policyDiscard: Cards;
     rng: RNG;

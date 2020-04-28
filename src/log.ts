@@ -2,7 +2,7 @@ export type Logger = (msg: string) => void;
 
 let LOGGER: Logger | undefined;
 
-export function setLogger(logger: Logger) {
+export function setLogger(logger: Logger | undefined) {
     LOGGER = logger;
 }
 
