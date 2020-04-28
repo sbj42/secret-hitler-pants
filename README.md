@@ -1,5 +1,8 @@
 # Secret Hitler Pants
 
+[![Node.js CI](https://github.com/sbj42/secret-hitler-pants/workflows/Node.js%20CI/badge.svg)](https://github.com/sbj42/secret-hitler-pants/actions?query=workflow%3A%22Node.js+CI%22)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 Secret Hitler Pants is a minimalistic implementation of the [Secret Hitler](https://secrethitler.com) social deduction game in TypeScript.
 
 ## Play it online
