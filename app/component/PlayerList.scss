@@ -1,0 +1,14 @@
+@use '../common.scss';
+
+.PlayerList {
+    @extend %box;
+
+    .content {
+        .name.me {
+            font-weight: bold;
+        }
+        .role.disconnected {
+            background-color: #ccc;
+        }
+    }
+}

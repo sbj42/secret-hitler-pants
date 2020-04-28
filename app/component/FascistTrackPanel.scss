@@ -1,0 +1,37 @@
+@import "../common.scss";
+
+.FascistTrackPanel {
+    @extend %box;
+    .content {
+        height: 64px;
+    }
+
+    .power {
+        float: left;
+        width: 64px;
+        height: 64px;
+        border: 1px solid gray;
+        margin-right: 5px;
+    }
+    .investigate-loyalty {
+        background-image: url('./power-investigate-loyalty.png');
+    }
+    .execution {
+        background-image: url('./power-execution.png');
+    }
+    .policy-peek {
+        background-image: url('./power-policy-peek.png');
+    }
+    .call-special-election {
+        background-image: url('./power-call-special-election.png');
+    }
+    .none {
+        background-image: url('./power-none.png');
+    }
+    .victory {
+        background-image: url('./fascist-victory.png');
+    }
+    .token::after {
+        content: url('./fascist-token.png');
+    }
+}

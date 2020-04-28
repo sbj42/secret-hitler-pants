@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Secret Hitler Pants</title>
+        <link rel="shortcut icon" href="/favicon.png">
+        <style>
+            body, input {
+                text-align: center;
+                font-family: monospace;
+            }
+            .prompt {
+                margin-top: 10px;
+            }
+            .credit {
+                margin-top: 15px;
+                font-size: 90%;
+                color: #444;
+            }
+            .credit a {
+                color: #44a;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pretitle">
+            <script>
+                const pretitles = [
+                    'Time to put on your...',
+                    'Can you find out who\'s wearing the...',
+                    'Honey, where are my...',
+                    'My keys must be in my other...',
+                    'We can dance in our...',
+                    'All the kids are wearing...',
+                ];
+                document.write(pretitles[Math.floor(Math.random() * pretitles.length)]);
+            </script>
+        </div>
+        <div class="title">
+            <image src="/title.png"></image>
+        </div>
+        <div class="prompt">
+            Enter a code word for your room:<br/>
+            <input type="text" name="name" id="name" max="20"><br/>
+            <input type="button" value="Play" id="play">
+            <script>
+                var nameNode = document.getElementById('name');
+                var playNode = document.getElementById('play');
+                nameNode.focus();
+                playNode.disabled = true;
+                function getName() {
+                    var value = nameNode.value;
+                    if (!value || value.length < 2 || value.length > 20) {
+                        return;
+                    }
+                    return value;
+                }
+                function doPlay() {
+                    var value = getName()
+                    if (typeof(value) === 'string') {
+                        window.location.pathname = '/' + value + '/';
+                    }
+                }
+                nameNode.addEventListener('keypress', function(ev) {
+                    if (ev.keyCode === 13) {
+                        doPlay();
+                    } else if (encodeURIComponent(ev.key) !== ev.key) {
+                        ev.preventDefault();
+                        return false;
+                    }
+                });
+                nameNode.addEventListener('keyup', function(ev) {
+                    playNode.disabled = typeof(getName()) !== 'string';
+                });
+                playNode.addEventListener('click', doPlay);
+            </script>    
+        </div>
+        <div class="credit">
+            This work, "Secret Hitler Pants", is a derivative of <a href="https://www.secrethitler.com/">"Secret Hitler"</a> by Mike Boxleiter,
+            Tommy Maranges, Max Temkin, and Mac Schubert, used under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+            <br/>
+            "Secret Hitler Pants" is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> by <a href="https://github.com/sbj42">James Clark</a>.
+        </div>
+    </body>
+</html>

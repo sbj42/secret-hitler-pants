@@ -1,0 +1,52 @@
+{
+  "name": "secret-hitler-pants",
+  "description": "Minimalistic Secret Hitler web server",
+  "keywords": ["secret-hitler", "game", "party"],
+  "version": "0.2.0",
+  "private": true,
+  "license": "cc-by-nc-sa-4.0",
+  "scripts": {
+    "build": "rimraf .cache dist && tsc -p tsconfig.server.json && parcel build ./app/index.html --public-url /-/ --out-dir dist/app",
+    "start": "node dist/server",
+    "start:dev": "cross-env NODE_ENV=development ts-node-dev src",
+    "test": "npm run lint && jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint \"src/**/*.ts\" \"app/**/*.ts\" \"app/**/*.tsx\" && tsc --noEmit"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/express-session": "^1.17.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.0",
+    "@types/parcel-bundler": "^1.12.1",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/seedrandom": "^2.4.28",
+    "@types/ws": "^7.2.3",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "jest": "^25.3.0",
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.3",
+    "ts-jest": "^25.4.0",
+    "ts-node": "^8.8.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "seedrandom": "^3.0.5",
+    "ws": "^7.2.3"
+  }
+}

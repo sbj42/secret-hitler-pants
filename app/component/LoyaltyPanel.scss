@@ -1,0 +1,28 @@
+@import "../common.scss";
+
+.LoyaltyPanel {
+    @extend %box;
+
+    background-position: right;
+    background-repeat: no-repeat;
+
+    .hitler {
+        color: #600;
+        font-weight: bold;
+    }
+    .fascist {
+        color: #600;
+    }
+    .liberal {
+        color: #034;
+    }
+}
+.liberal-face {
+    background-image: url('./liberal-face.png');
+}
+.fascist-face {
+    background-image: url('./fascist-face.png');
+}
+.hitler-face {
+    background-image: url('./hitler-face.png');
+}

@@ -1,0 +1,16 @@
+%box {
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid #aaa;
+    
+    .label {
+        font-weight: bold;
+    }
+    .content {
+        padding-left: 10px;
+    }
+}
+
+%dialog {
+    @extend %box;
+}

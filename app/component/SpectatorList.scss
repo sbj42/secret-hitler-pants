@@ -1,0 +1,11 @@
+@use '../common.scss';
+
+.SpectatorList {
+    @extend %box;
+
+    .content {
+        .name.me {
+            font-weight: bold;
+        }
+    }
+}

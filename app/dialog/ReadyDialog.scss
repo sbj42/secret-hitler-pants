@@ -1,0 +1,16 @@
+@import "../common.scss";
+
+.ReadyDialog {
+    @extend %dialog;
+
+    .button.ready.active {
+        background-color: #88f;
+    }
+    .button.not_ready.active {
+        background-color: #f88;
+    }
+    .button.spectator.active {
+        background-color: #ff8;
+    }
+    
+}

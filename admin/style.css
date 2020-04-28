@@ -1,0 +1,16 @@
+body, input, tr, td {
+    font-family: monospace;
+}
+body {
+    margin: 0;
+}
+#ui {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+}
+.num {
+    text-align: right;
+}

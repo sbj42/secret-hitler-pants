@@ -1,0 +1,11 @@
+@import "../common.scss";
+
+.FactsPanel {
+    @extend %box;
+    .fascist {
+        color: #600;
+    }
+    .liberal {
+        color: #034;
+    }
+}

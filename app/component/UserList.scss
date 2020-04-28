@@ -1,0 +1,26 @@
+@use '../common.scss';
+
+.UserList {
+    @extend %box;
+    .content {
+        .name.me {
+            font-weight: bold;
+        }
+        .name.anonymous {
+            color: #666;
+            font-style: italic;
+        }
+        .state.disconnected {
+            background-color: #ccc;
+        }
+        .state.ready {
+            background-color: #88f;
+        }
+        .state.not_ready {
+            background-color: #f88;
+        }
+        .state.spectator {
+            background-color: #ff8;
+        }
+    }
+}

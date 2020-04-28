@@ -1,0 +1,27 @@
+@import "../common.scss";
+
+.GameLogPanel {
+    @extend %box;
+    
+    .outer {
+        max-height: 150px;
+        overflow-y: scroll;
+
+        .important {
+            font-weight: bold;
+            background: #ffd;
+            border: 1px dashed #883;
+            padding: 0px 2px;
+        }
+        .fascist {
+            background: #e99;
+            border: 1px dashed #600;
+            padding: 0px 2px;
+        }
+        .liberal {
+            background: #9de;
+            border: 1px dashed #034;
+            padding: 0px 2px;
+        }
+    }
+}

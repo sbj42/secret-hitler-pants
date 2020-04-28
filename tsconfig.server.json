@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "strict": true,
+      "jsx": "react",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "rootDir": "src",
+      "outDir": "dist/server"
+    },
+    "exclude": ["app"]
+  }
+  
