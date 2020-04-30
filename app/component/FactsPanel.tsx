@@ -25,6 +25,7 @@ export default class FactsPanel extends React.Component<FactsPanelProps> {
         const numLiberals = Interface.NUM_LIBERALS_MAP[numPlayers];
         const numFascists = Interface.NUM_FASCISTS_MAP[numPlayers];
         return (<div className="FactsPanel">
+            <div className="rules-link">(<a target="_blank" rel="noopener noreferrer" href="https://secrethitler.com/assets/Secret_Hitler_Rules.pdf">rules</a>)</div>
             <div className="label">Game status:</div>
             <div className="content">
                 <div>There are <span className="liberal">{numLiberals} liberals</span> and <span className="fascist">{numFascists} fascists</span> (one of whom is Hitler).</div>
