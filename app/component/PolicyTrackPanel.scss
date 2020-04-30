@@ -1,17 +1,27 @@
 @import "../common.scss";
 
-.FascistTrackPanel {
+.PolicyTrackPanel {
     @extend %box;
     .content {
-        height: 64px;
+        height: 134px;
     }
 
-    .power {
+    .slot {
         float: left;
         width: 64px;
         height: 64px;
         border: 1px solid gray;
         margin-right: 5px;
+        margin-bottom: 3px;
+    }
+    .liberal.slot {
+        width: 78px;
+    }
+    .liberal.slot.victory {
+        width: 79px;
+    }
+    .track {
+        clear: both;
     }
     .investigate-loyalty {
         background-image: url('./power-investigate-loyalty.png');
@@ -28,10 +38,16 @@
     .none {
         background-image: url('./power-none.png');
     }
-    .victory {
+    .liberal.victory {
+        background-image: url('./liberal-victory.png');
+    }
+    .fascist.victory {
         background-image: url('./fascist-victory.png');
     }
-    .token::after {
+    .liberal.token::after {
+        content: url('./liberal-token.png');
+    }
+    .fascist.token::after {
         content: url('./fascist-token.png');
     }
 }

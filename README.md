@@ -15,7 +15,7 @@ To run your own server: install Node.js, clone this repo, and run:
 
 ~~~
 npm install
-npm build
+npm run build
 npm start
 ~~~
 

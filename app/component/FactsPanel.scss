@@ -2,6 +2,9 @@
 
 .FactsPanel {
     @extend %box;
+    .rules-link {
+        float: right;
+    }
     .fascist {
         color: #600;
     }

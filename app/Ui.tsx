@@ -26,7 +26,7 @@ import ExecuteDialog from './dialog/ExecuteDialog';
 import ChooseSpecialPresidentDialog from './dialog/ChooseSpecialPresidentDialog';
 import ChancellorConsiderVetoDialog from './dialog/ChancellorConsiderVetoDialog';
 import PresidentConsiderVetoDialog from './dialog/PresidentConsiderVetoDialog';
-import FascistTrackPanel from './component/FascistTrackPanel';
+import PolicyTrackPanel from './component/PolicyTrackPanel';
 
 export interface UiProps {
     connect: (listener: MessageListener) => void;
@@ -184,7 +184,7 @@ export default class Ui extends React.Component<UiProps, UiState> {
             </div>
             <div className="right">
                 {showFactsPanel && <FactsPanel numPlayers={playerUsers.length} electionTracker={game.electionTracker} policyCards={game.policyCards} policiesEnacted={game.policiesEnacted}/>}
-                {showFascistTrackPanel && <FascistTrackPanel numPlayers={playerUsers.length} fascistPolicies={game.policiesEnacted.fascist} />}
+                {showFascistTrackPanel && <PolicyTrackPanel numPlayers={playerUsers.length} liberalPolicies={game.policiesEnacted.liberal} fascistPolicies={game.policiesEnacted.fascist} />}
                 {showLoyaltyPanel && playerSecrets && <LoyaltyPanel users={users} players={players} playerSecrets={playerSecrets} />}
             </div>
             <div className="bottom">
