@@ -144,8 +144,8 @@ try {
             log(`[room ${roomId}] [user ${userId}]: ERROR [connect]: ${err}`);
         }
         ws.on('message', (text) => {
-            if (text === '') { // heartbeat
-                log(`heartbeat`);
+            if (text === '') {
+                // log(`heartbeat`);
                 return;
             }
             const message = JSON.parse(text.toString());
