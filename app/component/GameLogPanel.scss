@@ -2,6 +2,8 @@
 
 .GameLogPanel {
     @extend %box;
+
+    max-width: 600px;
     
     .outer {
         max-height: 150px;
