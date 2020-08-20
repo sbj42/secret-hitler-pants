@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
 
 import path from 'path';
@@ -99,7 +100,7 @@ try {
         noServer: true,
     });
     server.on('upgrade', (req, sock, head) => {
-        sessionParser(req, {} as express.Response<{}>, () => {
+        sessionParser(req, {} as express.Response<unknown>, () => {
             if (!('userIds' in req.session)) {
                 log('ERROR [server]: no userIds in session');
                 sock.destroy();
