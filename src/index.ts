@@ -24,6 +24,16 @@ function getRoomId(path: string) {
     }
 }
 
+declare module 'express-session' {
+    interface SessionData {
+        userIds: {
+            [roomId: string]: {
+                userId: string;
+            };
+        };
+    }
+}
+
 try {
     const app = express();
 
@@ -52,7 +62,7 @@ try {
 
     app.use((req, res, next) => {
         if (!req.path.startsWith('/-/')) {
-            const session = req.session as Express.Session;
+            const session = req.session;
             if (!('userIds' in session)) {
                 session.userIds = {};
                 log('new connection');
